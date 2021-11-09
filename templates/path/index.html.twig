@@ -10,8 +10,16 @@
     <ul>
        <li><a href="{{ path('path') }}">relative path</a></li>
        <li><a href="{{ url('path') }}">absolute path</a></li>
-       <li><img src="{{ asset('images/logo.png') }}" /></li>
+       <li><img src="{{ asset('images/logo.png') }}" alt="symfony img logo" /></li>
+        <a href="{{absolute_url(asset('images/logo.png')) }}" />{{absolute_url(asset('images/logo.png')) }}</a>
     </ul>
+{% set x =" some string \ with backslash `\  read escape filter" %}
 
 </div>
+{% endblock %}
+{% block javascripts %}
+    <script>
+        var route={{ x |escape('js') }}
+        alert(route);
+    </script>
 {% endblock %}

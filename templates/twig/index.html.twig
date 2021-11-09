@@ -25,5 +25,16 @@
     {% endfor %}
     {% include 'includes/header.html.twig' with {'users': users} %}
 
+
+    {% block javascripts %}
+
+        {{ parent() }}
+        <script>
+            alert('alert from subview');
+        </script>
+
+    {% endblock %}
+
+
 {% endblock %}
 

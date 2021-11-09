@@ -3,13 +3,9 @@
 {% block title %}Hello TwigController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Hello {{ controller_name|upper }}! ✅</h1>
 
     This friendly message is coming from:
     <ul>
@@ -17,4 +13,15 @@
         <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/project1/templates/twig/index.html.twig'|file_link(0) }}">templates/twig/index.html.twig</a></code></li>
     </ul>
 </div>
+    {%  set users= [{name:'first'},{name:'second'},{name:'jane'}] %}
+    {% for user in users %}
+     {% if user.name=='jane' %}
+
+        <h1>jane is here</h1>
+        {% else %}
+
+            <h1>{{ user.name }}</h1>
+        {% endif %}
+    {% endfor %}
 {% endblock %}
+

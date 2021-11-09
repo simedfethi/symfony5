@@ -18,6 +18,7 @@ class ForwardController extends AbstractController
        return $res;
     }
 
+    #[Route('/forward/secondmethod/{page}', name: 'forwardsecondmethod')]
     public function secondmethod($page)
     {
         return new Response('forwarding method'.$page);

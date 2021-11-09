@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello PathController!{% endblock %}
+{% set string= " some string \n with backslash `\n  read escape filter" %}
 
 {% block body %}
 
@@ -13,13 +14,12 @@
        <li><img src="{{ asset('images/logo.png') }}" alt="symfony img logo" /></li>
         <a href="{{absolute_url(asset('images/logo.png')) }}" />{{absolute_url(asset('images/logo.png')) }}</a>
     </ul>
-{% set x =" some string \ with backslash `\  read escape filter" %}
 
 </div>
 {% endblock %}
 {% block javascripts %}
     <script>
-        var route={{ x |escape('js') }}
+        var route="{{ string|escape('js') }}" ;
         alert(route);
     </script>
 {% endblock %}

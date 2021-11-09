@@ -30,10 +30,17 @@
 
         {{ parent() }}
         <script>
-            alert('alert from subview');
+          //  alert('alert from subview');
         </script>
 
     {% endblock %}
+
+    {%  for i in 1..20 %}
+         <div class="{{ cycle(['even','odd'],i) }}">
+          {{ i }}
+         </div>
+
+    {% endfor %}
 
 
 {% endblock %}

@@ -23,5 +23,7 @@
             <h1>{{ user.name }}</h1>
         {% endif %}
     {% endfor %}
+    {% include 'includes/header.html.twig' with {'users': users} %}
+
 {% endblock %}
 

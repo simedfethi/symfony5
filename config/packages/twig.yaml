@@ -1,7 +1,11 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
-
+    globals:
+        ga_code: 'gAXXXDDDDDDDDDD'
 when@test:
     twig:
         strict_variables: true
         debug: true
+
+
+

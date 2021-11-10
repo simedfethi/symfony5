@@ -87,7 +87,8 @@ class CrudController extends AbstractController
     public function rawSql (UserRepository $repository)
     {
 
-         $users=$repository->findAllGreaterThanPrice(10);
+         //$users=$repository->findAllGreaterThanPrice(10);
+        $users=$repository->sqlraw(10);
          //$users=[];
         return $this->render('crud/index.html.twig', [
             'controller_name' => 'CrudController',

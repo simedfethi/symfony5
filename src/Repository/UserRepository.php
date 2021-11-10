@@ -51,6 +51,9 @@ class UserRepository extends ServiceEntityRepository
     public function findAllGreaterThanPrice(int $id): array
     {
         $entityManager = $this->getEntityManager();
+        $connection=$entityManager->getConnection();
+        $statement=$connection->prepare('select * from user where id > :id');
+        $statement->executeQuery(['id'=>10])->fetchAssociative();
 
         $query = $entityManager->createQuery(
             'SELECT u
@@ -60,6 +63,36 @@ class UserRepository extends ServiceEntityRepository
         )->setParameter('id', $id);
 
         return $query->getResult();
+    }
+    public function sqlraw(int $id): array
+    {
+        $entityManager = $this->getEntityManager();
+        $connection=$entityManager->getConnection();
+        $statement=$connection->prepare('select * from user where id > :id');
+        $res=$statement->executeQuery(['id'=>10])->fetchAllAssociative();
+
+
+        return $res;
+    }
+    public function findAllGreater2(int $price, bool $includeUnavailableProducts = false): array
+    {
+        // automatically knows to select Products
+        // the "p" is an alias you'll use in the rest of the query
+        $qb = $this->createQueryBuilder('p')
+            ->where('p.price > :price')
+            ->setParameter('price', $price)
+            ->orderBy('p.price', 'ASC');
+
+        if (!$includeUnavailableProducts) {
+            $qb->andWhere('p.available = TRUE');
+        }
+
+        $query = $qb->getQuery();
+
+        return $query->execute();
+
+        // to get just one result:
+        // $product = $query->setMaxResults(1)->getOneOrNullResult();
     }
 
 }

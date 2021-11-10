@@ -7,3 +7,14 @@
     <h1>global variable {{ga_code}}! ✅</h1>
 
 {% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('build/js/custom.js') }}"></script>
+<script>
+  $(document).ready(function (){
+      alert(1);
+      }
+
+  );
+</script>
+{% endblock %}

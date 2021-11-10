@@ -1,1 +1,2 @@
-var $ =require('jquery');
+var $=require('jquery');
+global.$=global.jquery=$;

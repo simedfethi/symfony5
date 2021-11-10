@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SecurityController!{% endblock %}
+
+{% block body %}
+
+{{ app.user}}
+    {{ app.request.get('a') }}
+    {{ app.environment }}
+
+{% endblock %}

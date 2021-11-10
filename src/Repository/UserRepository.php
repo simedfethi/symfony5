@@ -47,4 +47,19 @@ class UserRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findAllGreaterThanPrice(int $id): array
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT u
+            FROM App\Entity\User u
+            WHERE u.id > :id
+            ORDER BY u.id ASC'
+        )->setParameter('id', $id);
+
+        return $query->getResult();
+    }
+
 }

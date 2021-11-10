@@ -19,4 +19,16 @@ class ParamConverterController extends AbstractController
             'users'=>$users
         ]);
     }
+    #[Route('/param/lifecycle', name: 'lifecycle')]
+    public function lifecycle(): Response
+    {
+        // life cicyle callback in user entity
+        $entitymanager=$this->getDoctrine()->getManager();
+        $user = new User();
+        $user->setName('x');
+        $user->setLastname('y');
+        $entitymanager->persist($user);
+        $entitymanager->flush();
+        return new Response($user->getName());
+    }
 }

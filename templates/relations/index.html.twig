@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RelationsController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+
+</style>
+
+<div class="example-wrapper">
+   {{ user.id }}
+    {{ user.name }}
+    {{ user.lastname }}
+
+    {% for video in user.videos %}
+        <ul>
+            <li> {{ video.title }}</li>
+
+        </ul>
+
+
+
+    {% endfor %}
+
+{% endblock %}

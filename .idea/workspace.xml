@@ -20,29 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b3109bc-8b89-4d05-8058-dbb7c6848eb2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/packages/dev/swiftmailer.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/swiftmailer.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/test/swiftmailer.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20211113153306.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/videos/c560163361f38bab6000ed5d5b47306473351ca5.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/EmailController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/email/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/emails/registration.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20211113201411.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/SecurityUser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/SecurityUserRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/login.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/417bacc2-6f82-489e-ac6a-ec508264740a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/417bacc2-6f82-489e-ac6a-ec508264740a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/project1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211107143632.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211110152325.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/FormController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FormController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Video.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Video.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/VideoformType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/VideoformType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/form/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +219,7 @@
       <workItem from="1636575446458" duration="1393000" />
       <workItem from="1636662253196" duration="11039000" />
       <workItem from="1636732147366" duration="24000" />
-      <workItem from="1636747207709" duration="15213000" />
+      <workItem from="1636747207709" duration="24728000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1636466952723</created>
@@ -420,7 +410,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636816449792</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="emails swift mailer">
+      <created>1636819869963</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1636819869963</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -458,7 +455,8 @@
     <MESSAGE value="commit subscriber &amp; event" />
     <MESSAGE value="Forms" />
     <MESSAGE value="validations" />
-    <option name="LAST_COMMIT_MESSAGE" value="validations" />
+    <MESSAGE value="emails swift mailer" />
+    <option name="LAST_COMMIT_MESSAGE" value="emails swift mailer" />
   </component>
   <component name="WindowStateProjectService">
     <state x="475" y="55" key="#PHP" timestamp="1636460981152">
@@ -481,10 +479,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1636462691564" />
-    <state x="176" y="0" width="1203" height="824" key="CommitChangelistDialog2" timestamp="1636816449124">
+    <state x="176" y="0" width="1203" height="824" key="CommitChangelistDialog2" timestamp="1636819869121">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="176" y="0" width="1203" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1636816449124" />
+    <state x="176" y="0" width="1203" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1636819869121" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1636473331810">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -541,10 +539,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1636811742650" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1636816451943">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1636819873552">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1636816451943" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1636819873552" />
     <state x="619" y="185" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1636542432287">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

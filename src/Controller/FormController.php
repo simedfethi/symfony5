@@ -20,6 +20,8 @@ class FormController extends AbstractController
         {
             dump($form->getData());
             // or persist entitiesmanager to database
+            //valdation with validator and doctrine annotations at entity level
+            //need more details about translating validation message in user language
         }
         return $this->render('form/index.html.twig', [
             'controller_name' => 'FormController',

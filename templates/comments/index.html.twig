@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CommentsController!{% endblock %}
+
+{% block body %}
+
+
+        {% for vote in votes %}
+        <div class="vote-arrows flex-fill pt-2 js-vote-arrows" style="min-width: 90px;">
+                 {{ vote }}
+                    <a  class="vote-up" href="#" data-direction="up">vote up</a>
+                    <a   class="vote-down" href="#" data-direction="down">vote down</a>
+                    <span>+<span class="js-vote-total">6 </span> </span>
+
+        </div>
+
+        {% endfor %}
+
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+ <script src="{{asset('js/custom.js') }}"></script>
+{% endblock %}
+
+
+

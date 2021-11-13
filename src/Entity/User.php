@@ -42,6 +42,11 @@ class User
      *     cascade={"remove"})
      *
      */
+
+
+
+
+
     //orphanRemoval=true    to set null in relation
     private $videos;
 

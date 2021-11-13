@@ -41,7 +41,8 @@ class RelationsController extends AbstractController
         $entitymanager->remove($user);
 
         $entitymanager->flush();
-        dump($user);
+        //dump($user);
+        dump();
         return new Response('200 OK');
     }
 }

@@ -96,5 +96,17 @@ class CrudController extends AbstractController
         ]);
     }
 
+    #[Route('/crud/user/{id}', name: 'crud_user')]
+    public  function userwithvideos($id) :Response
+    {
+        $user=$this->getDoctrine()->getRepository(User::class)->userWithVideos($id);
+        dump($user);
+        $users=[];
+        return $this->render('crud/index.html.twig',[
+           'controller_name'=>'CrudController',
+           'users' => $users
+        ]);
+    }
+
 
 }

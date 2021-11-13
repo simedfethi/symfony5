@@ -64,6 +64,17 @@ class UserRepository extends ServiceEntityRepository
 
         return $query->getResult();
     }
+    public function userWithVideos($id):?User
+    {
+        return $this->createQueryBuilder('u')
+            ->innerJoin('u.videos','v')
+            ->addSelect('v')
+            ->andWhere('u.id = :id')
+            ->setParameter('id',$id)
+            ->getQuery()
+            ->getOneOrNullResult();
+
+    }
     public function sqlraw(int $id): array
     {
         $entityManager = $this->getEntityManager();

@@ -18,7 +18,14 @@ class FormController extends AbstractController
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid())
         {
-            dump($form->getData());
+            $file=$form->get('file')->getData();
+            $filename=sha1(random_bytes(14)).'.'.$file->guessExtension();
+            $file->move(
+                $this->getParameter('video_directory'),
+                $filename
+            );
+            $video->setFile($filename);
+            dump($video);
             // or persist entitiesmanager to database
             //valdation with validator and doctrine annotations at entity level
             //need more details about translating validation message in user language

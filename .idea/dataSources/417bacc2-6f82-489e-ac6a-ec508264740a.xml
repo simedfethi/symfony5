@@ -107,13 +107,23 @@
       <DataType>VARCHAR(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="30" parent="10" name="IDX_7CC7DA2CA76ED395">
+    <column id="30" parent="10" name="file">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="31" parent="10" name="IDX_7CC7DA2CA76ED395">
       <ColNames>user_id</ColNames>
       <ColumnCollations></ColumnCollations>
     </index>
-    <key id="31" parent="10">
+    <key id="32" parent="10">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
+    <foreign-key id="33" parent="10" name="FK_7CC7DA2CA76ED395">
+      <ColNames>user_id</ColNames>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>

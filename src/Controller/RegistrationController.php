@@ -33,6 +33,7 @@ class RegistrationController extends AbstractController
 
             $user->setPassword($encodedpassword);
             $user->setEmail($form->get('email')->getData());
+            $user->setRoles(['ROLE_ADMIN']);
             $entitiesmanager->persist($user);
             $entitiesmanager->flush();
             dump($user);
